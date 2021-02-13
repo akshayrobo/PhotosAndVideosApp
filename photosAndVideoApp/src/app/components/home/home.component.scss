@@ -1,0 +1,66 @@
+.home-page-container {
+    width: 100%;
+    .home-banner-container {
+        width: inherit;
+        background: url(../../../assets/images/Mask.png);
+        background-repeat: no-repeat;
+        .app-logo-container {
+            margin-left: 125px;
+            padding-top: 30px;
+        }
+        .search-moto-container {
+            font-family: Roboto;
+            color: #fff;
+            padding-top: 65px;
+            padding-bottom: 95px;
+            .app-moto {
+                font-weight: bold;
+                letter-spacing: 0;
+                line-height: 35px;
+                text-align: center;
+                font-size: 30px;
+            }
+            .app-sub-moto {
+                font-size: 18px;
+                letter-spacing: 0;
+                line-height: 24px;
+                text-align: center;
+            }
+            .search-bar-container {
+                display: flex;
+                justify-content: center;
+                .search {
+                    height: 44px;
+                    width: 520px;
+                }
+                .search-label {
+                    color: #FFFFFF;
+                    font-family: Roboto;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 0.32px;
+                    /* line-height: 16px; */
+                    text-align: center;
+                    border-radius: 2px;
+                    background-color: #560014;
+                    margin-left: -89px;
+                    width: 87px;
+                    /* height: 22px; */
+                    margin-top: 2px;
+                    /* position: initial; */
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    height: 16px;
+                }
+            }
+            input[type='text'] {
+                padding-left: 12px;
+                padding-right: 90px;
+            }
+        }
+    }
+    .content-header {
+        width: calc(100% - 500px);
+        margin: 0 auto;
+    }
+}

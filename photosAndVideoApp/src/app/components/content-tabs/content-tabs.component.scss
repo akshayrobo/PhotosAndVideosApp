@@ -1,0 +1,26 @@
+.content-tab-container {
+    display: flex;
+    justify-content: space-between;
+    // opacity: 0.5;
+    color: #230735;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 21px;
+    padding: 20px 0;
+    border-bottom: 1px solid #276AA0;
+    span {
+        padding: 21px;
+        // border-bottom: 3px solid red;
+    }
+    .selected {
+        color: red;
+        border-bottom: 2px solid red;
+    }
+    .basic {
+        opacity: 0.5;
+        color: #230735;
+        border-bottom: 1px solid #276AA0;
+    }
+}

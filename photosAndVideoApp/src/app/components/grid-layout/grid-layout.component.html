@@ -1,0 +1,21 @@
+<div *ngIf="gridData.data">
+    <div *ngFor="let item of gridData.data">
+        <div class="content-container" [style.background]="'url('+item.url+')'">
+            <div class="favourite" (click)="addFavourite()" *ngIf="favItem">
+                <img src="../../../assets/images/heart.png">
+            </div>
+            <div class="favourite" (click)="addFavourite()" *ngIf="!favItem">
+                <img src="../../../assets/images/red-heart.png">
+            </div>
+            <div class="content-detail">
+                <div class="profile-image">
+                    <img [src]="item.photographer_url" alt="profile-image" class="profile-photo">
+                </div>
+                <div class="profile-name">
+                    {{item.photographer}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="content-tab-container">
+    <div>
+        <span (click)="showPhotos()" [ngClass]="showPhoto?'selected':'basic'">
+            Photo
+        </span>
+        <span (click)="showVideos()" [ngClass]="showVideo?'selected':'basic'">
+            Video
+        </span>
+    </div>
+    <div>
+        <span (click)="showFavourites()" [ngClass]="showFavourite?'selected':'basic'">
+            Favourites
+        </span>
+    </div>
+</div>
+<div>
+    <app-grid-layout [gridData]="data"></app-grid-layout>
+</div>

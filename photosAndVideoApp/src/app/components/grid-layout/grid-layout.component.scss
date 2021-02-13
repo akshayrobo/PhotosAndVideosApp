@@ -1,0 +1,36 @@
+.content-container {
+    width: 220px;
+    float: left;
+    margin: 10px;
+    position: relative;
+    .favourite {
+        float: right;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .content-detail {
+        padding-top: 125px;
+        padding-bottom: 10px;
+        width: 220px;
+        display: flex;
+        .profile-image {
+            padding-left: 10px;
+            .profile-photo {
+                height: 31px;
+                width: 31px;
+                border: 1px solid #FFFFFF;
+                border-radius: 100%;
+            }
+        }
+        .profile-name {
+            padding: 10px;
+            color: #FFFFFF;
+            font-family: Roboto;
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 1;
+            padding: 10px;
+        }
+    }
+}
