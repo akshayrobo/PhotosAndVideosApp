@@ -12,6 +12,7 @@ export class ContentTabsComponent implements OnInit, OnChanges {
   showFavourite = false;
   @Input() searchData: any;
   data: any;
+  favouriteItems: any;
   constructor(private httpService: HttpsService) {
     console.log("::::::::::::::::", this.searchData)
   }
@@ -28,18 +29,27 @@ export class ContentTabsComponent implements OnInit, OnChanges {
     this.showPhoto = true;
     this.showVideo = false;
     this.showFavourite = false;
+    this.httpService.searchPhoto(this.searchData.searchKey, 20).subscribe(res => {
+      this.searchData = {
+        type: 'photo',
+        searchKey: this.searchData.searchKey,
+        data: res.photos
+      }
+      console.log("............", this.searchData);
+
+    })
   }
   showVideos() {
     this.showVideo = true;
     this.showPhoto = false;
     this.showFavourite = false;
     console.log('showPhotos')
-    this.httpService.searchPhoto(this.searchData.searchKey, 20).subscribe(res => {
+    this.httpService.searchVideo(this.searchData.searchKey, 20).subscribe(res => {
       console.log("............", this.searchData);
       this.data = {
         type: 'Video',
         searchKey: this.searchData.searchKey,
-        data: res.photos
+        data: res.videos
       }
     })
   }
@@ -47,6 +57,19 @@ export class ContentTabsComponent implements OnInit, OnChanges {
     this.showFavourite = true;
     this.showPhoto = false;
     this.showVideo = false;
-    console.log('showPhotos')
+    let searchingArray = !!this.data.data ? this.data.data : this.searchData.data;
+    searchingArray.forEach(element => {
+      if (element.liked) {
+        this.favouriteItems.push(element)
+      }
+      if (!!this.favouriteItems) {
+        this.favouriteItems = [];
+      }
+    });
+    this.data = {
+      type: 'favourites',
+      searchKey: this.data.searchKey,
+      data: this.favouriteItems
+    }
   }
 }

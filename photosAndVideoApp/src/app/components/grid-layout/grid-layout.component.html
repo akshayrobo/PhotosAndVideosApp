@@ -1,5 +1,5 @@
 <div *ngIf="gridData.data">
-    <div *ngFor="let item of gridData.data">
+    <div *ngFor="let item of gridData.data" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScrollDown()">
         <div class="content-container" [style.background]="'url('+item.url+')'">
             <div class="favourite" (click)="addFavourite()" *ngIf="favItem">
                 <img src="../../../assets/images/heart.png">

@@ -12,15 +12,17 @@ export class HomeComponent implements OnInit {
   constructor(private httpService: HttpsService) { }
 
   ngOnInit(): void {
-    this.Onsearch();
+    this.Onsearch(this.searchParams);
 
   }
 
-  Onsearch() {
+  Onsearch(value) {
+    let searchKey;
+    !!value? searchKey = value : searchKey = this.searchParams;
     this.httpService.searchPhoto(this.searchParams, 20).subscribe(res => {
       this.searchData = {
         type: 'photo',
-        searchKey: this.searchParams,
+        searchKey: searchKey,
         data: res.photos
       }
       console.log("............",this.searchData);

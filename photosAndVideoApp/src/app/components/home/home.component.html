@@ -9,8 +9,8 @@
                 <div class="app-sub-moto">Best memories online</div>
             </div>
             <div class="search-bar-container">
-                <input type="text" class="search" placeholder="Search photos, videos, artists" alt="search-bar-images-videos" [(value)]="searchParams">
-                <div class="search-label" (click)="Onsearch()">Search</div>
+                <input type="text" class="search" placeholder="Search photos, videos, artists" alt="search-bar-images-videos" #searchItem>
+                <div class="search-label" (click)="Onsearch(searchItem.value)">Search</div>
             </div>
         </div>
     </div>

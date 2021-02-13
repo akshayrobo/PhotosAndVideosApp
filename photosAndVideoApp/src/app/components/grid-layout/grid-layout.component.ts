@@ -47,5 +47,8 @@ export class GridLayoutComponent implements OnInit, OnChanges {
   addFavourite() {
     this.favItem = !this.favItem;
   }
+  onScrollDown() {
+    console.log('scrolled down!!');
+  }
 
 }
